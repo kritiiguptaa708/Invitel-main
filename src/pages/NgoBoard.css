@@ -1,0 +1,148 @@
+/* =========================================
+   NGO BOARD (QUESTS): NEO-POP FIX
+   ========================================= */
+
+.mission-board-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* HEADER SECTION */
+.board-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.board-header h1 {
+  font-size: 4rem;
+  letter-spacing: -2px;
+  text-shadow: 4px 4px 0px var(--accent-yellow);
+  margin: 0 0 10px 0;
+}
+
+.board-header p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* RESPONSIVE GRID - Fixes overlapping/sizing issues */
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  align-items: stretch; /* Forces all cards in a row to be the same height */
+}
+
+/* MISSION CARD */
+.mission-card {
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow-hard);
+  display: flex;
+  flex-direction: column; /* Crucial for button alignment */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 0px #000;
+}
+
+/* BADGES ROW */
+.mission-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.badge-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.bg-yellow { background: var(--accent-yellow); color: #000; }
+.bg-dark { background: #000; color: #fff; }
+
+/* TYPOGRAPHY */
+.mission-card h2 {
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 0 0 15px 0;
+  letter-spacing: -0.5px;
+}
+
+.mission-desc {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0 0 25px 0;
+  flex-grow: 1; /* MAGIC TRICK: This pushes the bounty box & button to the bottom! */
+}
+
+/* BOUNTY HIGHLIGHT BOX */
+.bounty-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8f8f8;
+  border: 2px dashed #000;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.bounty-box span {
+  font-size: 0.95rem;
+}
+
+.bounty-box strong {
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+}
+
+/* DEPLOY BUTTON */
+.forge-btn {
+  width: 100%;
+  color: #fff;
+  border: var(--border-thick);
+  padding: 16px;
+  border-radius: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #000;
+  transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-top: 10px; /* Separates it slightly from the mana bar */
+}
+
+/* Button Active Physics */
+.forge-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+  .board-header h1 {
+    font-size: 3rem;
+  }
+  .missions-grid {
+    grid-template-columns: 1fr; /* Forces 1 column on mobile */
+  }
+}

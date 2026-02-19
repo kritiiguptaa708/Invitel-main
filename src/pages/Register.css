@@ -1,0 +1,111 @@
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.register-card {
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: var(--border-radius);
+  padding: 40px;
+  box-shadow: var(--shadow-hard);
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.register-title {
+  font-size: 3rem;
+  line-height: 0.9;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 0px var(--accent-yellow), 6px 6px 0px #000;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.input-group input, 
+.input-group select {
+  background: #fff;
+  border: var(--border-thick);
+  padding: 15px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.1s;
+}
+
+.input-group input:focus {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px #000;
+  border-color: var(--accent-purple);
+}
+
+.spawn-btn {
+  background: var(--accent-purple);
+  color: #fff;
+  border: var(--border-thick);
+  box-shadow: 6px 6px 0px #000;
+  padding: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.1s;
+}
+
+.spawn-btn:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0px #000;
+  background: var(--accent-pink);
+}
+
+/* LOADING STATE */
+.creation-state {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.neo-loader {
+  width: 60px;
+  height: 60px;
+  background: var(--accent-yellow);
+  border: var(--border-thick);
+  margin: 0 auto 20px auto;
+  box-shadow: 4px 4px 0px #000;
+  animation: neoRotate 1.5s infinite steps(4);
+}
+
+@keyframes neoRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.creation-state h3 {
+  font-size: 1.1rem;
+  color: var(--accent-purple);
+}

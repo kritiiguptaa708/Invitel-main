@@ -1,0 +1,392 @@
+/* =========================================
+   PROFILE PAGE CORE LAYOUT
+   ========================================= */
+:root {
+  --border-thick: 4px solid #000;
+  --shadow-hard: 10px 10px 0px #000;
+  --border-radius: 16px;
+  --accent-yellow: #FFD600;
+  --accent-purple: #A855F7;
+  --accent-pink: #EC4899;
+  --accent-green: #22C55E;
+  --text-muted: #555;
+}
+
+.profile-page-wrapper {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.profile-container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* =========================================
+   HERO ID CARD (LEFT SIDE)
+   ========================================= */
+.profile-id-card {
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: var(--border-radius);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-hard);
+  text-align: center;
+  position: sticky;
+  top: 100px;
+  transition: all 0.3s ease;
+}
+
+.id-photo-wrapper {
+  width: 140px;
+  height: 140px;
+  border: var(--border-thick);
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.id-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-dot {
+  width: 20px;
+  height: 20px;
+  background: var(--accent-green);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  box-shadow: 0 0 0 2px #000;
+}
+
+.user-display-name {
+  font-size: 2.2rem;
+  margin: 0 0 10px 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.rank-display-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  padding: 8px 20px;
+  border: 3px solid #000;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.id-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+  padding: 20px 0;
+  border-top: 2px dashed #ddd;
+}
+
+.id-stat label { font-size: 0.7rem; font-weight: 900; color: var(--text-muted); }
+.id-stat p { font-size: 1.5rem; font-weight: 900; margin: 0; }
+
+.perk-highlight {
+  background: #f8f9fa;
+  border: 2px dashed #000;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.perk-highlight label { font-size: 0.65rem; font-weight: 900; color: var(--text-muted); }
+.perk-highlight p { font-weight: 900; margin: 5px 0 0 0; color: var(--accent-purple); }
+
+/* --- REDESIGNED BUTTONS --- */
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.share-trigger-btn {
+  width: 100%;
+  background: var(--accent-yellow);
+  color: #000;
+  border: var(--border-thick);
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 6px 6px 0px #000;
+  transition: all 0.1s ease;
+}
+
+.share-trigger-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #000;
+}
+
+.share-trigger-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #000;
+}
+
+.terminate-btn {
+  width: 100%;
+  background: var(--accent-pink);
+  color: #000;
+  border: var(--border-thick);
+  padding: 14px;
+  font-weight: 900;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 4px 4px 0px #000;
+}
+
+/* =========================================
+   DATA COLUMN (RIGHT SIDE)
+   ========================================= */
+.profile-data-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.data-card {
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow-hard);
+}
+
+.impact-card-bg { background-color: #f0fdf4; }
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+}
+
+.records-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.record-box {
+  background: #fff;
+  border: var(--border-thick);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.record-box:hover { transform: translateY(-5px); }
+
+.record-box h4 {
+  font-size: 1.8rem;
+  margin: 10px 0 5px 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+}
+
+.record-box p {
+  font-weight: 900;
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.info-item label { font-size: 0.7rem; font-weight: 900; color: var(--text-muted); }
+.info-item p { font-size: 1.1rem; font-weight: 800; margin: 0; }
+
+.settings-btn {
+  background: #fff;
+  color: #000;
+  border: var(--border-thick);
+  padding: 18px;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 6px 6px 0px #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* =========================================
+   MILESTONE MODAL & SHARE CARD
+   ========================================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.share-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.share-card-inner {
+  width: 100%;
+  max-width: 400px;
+  border: 5px solid #000;
+  padding: 20px;
+  box-shadow: 15px 15px 0px #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.share-card-content {
+  background: #fff;
+  border: 3px solid #000;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.close-share {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.share-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.brand-tag { font-weight: 900; font-size: 1rem; }
+.brand-tag span { color: var(--accent-purple); }
+
+.share-avatar-ring {
+  width: 100px;
+  height: 100px;
+  border: 4px solid #000;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.share-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.share-rank-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #000;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 0.7rem;
+  margin: 10px 0;
+}
+
+.share-stat-line { font-size: 0.9rem; line-height: 1.4; margin: 15px 0; }
+
+.share-footer {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 3px dashed #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qr-sim { display: flex; align-items: center; gap: 10px; }
+.qr-box { width: 40px; height: 40px; border: 2px solid #000; background: #eee; }
+.qr-sim span { font-size: 0.6rem; font-weight: 900; }
+
+.share-url { font-family: monospace; font-weight: 900; font-size: 0.8rem; }
+
+.share-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 14px;
+  border: 3px solid #000;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.1s;
+}
+
+.action-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
+.action-btn.download { background: #fff; }
+.action-btn.social { background: #000; color: #fff; }
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .profile-container { grid-template-columns: 1fr; }
+  .profile-id-card { position: static; }
+}

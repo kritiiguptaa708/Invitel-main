@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Space+Grotesk:wght@500;700;900&display=swap');
+
+:root {
+  /* THE NEO-POP HACKATHON PALETTE */
+  --bg-primary: #fdfaf6; /* Warm paper texture */
+  --bg-surface: #ffffff;
+  --text-main: #000000;
+  --text-muted: #444444;
+  
+  /* Vibrant Pop Colors */
+  --accent-green: #10B981; 
+  --accent-yellow: #FFD500; 
+  --accent-purple: #A855F7; 
+  --accent-blue: #3B82F6; 
+  --accent-pink: #FF499E;
+
+  /* Neo-Brutalist Mechanics */
+  --border-thick: 3px solid #000000;
+  --shadow-hard: 6px 6px 0px #000000;
+  --shadow-hover: 2px 2px 0px #000000;
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  /* Playful polka-dot background pattern */
+  background-image: radial-gradient(#000000 1.5px, transparent 1.5px);
+  background-size: 35px 35px;
+  background-position: 0 0;
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #000;
+}

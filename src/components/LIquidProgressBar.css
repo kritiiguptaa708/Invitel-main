@@ -1,0 +1,59 @@
+.mana-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.mana-bar-glass {
+  width: 100%;
+  height: 40px;
+  background: #f0f0f0;
+  border: var(--border-thick);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 4px 4px 0px rgba(0,0,0,0.1);
+  transform: rotate(-1deg);
+}
+
+.mana-liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* WAVY ANIMATION MAGIC */
+.wave {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 200%;
+  height: 20px;
+  background-image: radial-gradient(circle at 25px 10px, transparent 12px, inherit 13px);
+  background-size: 50px 20px;
+  background-repeat: repeat-x;
+  animation: waveMove 3s linear infinite;
+}
+
+.wave2 {
+  top: -10px;
+  opacity: 0.5;
+  animation: waveMove 4s linear infinite reverse;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50px); }
+}
+
+.mana-stats {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}

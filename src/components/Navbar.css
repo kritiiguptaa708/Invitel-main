@@ -1,0 +1,128 @@
+/* =========================================
+   FIXED NEO-POP NAV: ALIGNMENT & POLISH
+   ========================================= */
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px; /* Reduced vertical padding to lock height */
+  height: 80px;    /* Fixed height for perfect centering */
+  background: var(--accent-yellow);
+  border-bottom: var(--border-thick);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 0px #000;
+}
+
+/* LOGO SECTION */
+.logo a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  display: flex;
+  align-items: center;
+}
+
+/* CENTER NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 900;
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 10px 16px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: all 0.1s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  background: #fff;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0px #000;
+  transform: translate(-2px, -2px);
+}
+
+/* RIGHT PROFILE SECTION */
+.nav-profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #000;
+  background: #fff;
+  border: var(--border-thick);
+  padding: 6px 16px 6px 8px; /* Offset padding for the avatar circle */
+  border-radius: 50px;       /* Perfect Pill shape */
+  box-shadow: 4px 4px 0px #000;
+  transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover & Active State */
+.profile-nav-item:hover,
+.profile-nav-item.active {
+  background: var(--accent-purple);
+  color: #fff;
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px #000;
+}
+
+/* The Avatar Circle in Nav */
+.nav-avatar {
+  width: 36px;
+  height: 36px;
+  background: var(--accent-blue);
+  border: 2px solid #000;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevents avatar from squishing */
+}
+
+.nav-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-username {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Force text white on hover for visibility */
+.profile-nav-item:hover .nav-username,
+.profile-nav-item.active .nav-username {
+  color: #fff;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 900px) {
+  .top-nav { padding: 0 20px; }
+  .nav-username { display: none; } /* Show only avatar on mobile */
+  .profile-nav-item { padding: 6px; }
+  .nav-links { display: none; } /* Standard hackathon play: hide links on mobile for simplicity */
+}

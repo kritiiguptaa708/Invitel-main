@@ -1,0 +1,100 @@
+.network-wrapper {
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.network-header h1 { font-size: 3rem; margin-bottom: 10px; }
+.network-header p { font-weight: 700; font-size: 1.2rem; }
+
+.constellation-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  margin: 50px auto;
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: 20px;
+  box-shadow: var(--shadow-hard);
+  background-image: radial-gradient(#ddd 2px, transparent 2px);
+  background-size: 20px 20px;
+}
+
+.star-line-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Overriding the SVG line stroke color to Black for Neo-Brutalism */
+.star-line-container line { stroke: #000 !important; stroke-width: 4px !important; stroke-opacity: 1 !important; }
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  border: var(--border-thick);
+}
+
+.supernova {
+  width: 90px;
+  height: 90px;
+  background: var(--accent-yellow);
+  box-shadow: 6px 6px 0px #000;
+  transform: translate(-50%, -50%) !important;
+  color: #000;
+  z-index: 5;
+}
+
+.orbiting-star {
+  width: 30px;
+  height: 30px;
+  background: var(--accent-green);
+  box-shadow: 4px 4px 0px #000;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.1s ease;
+}
+
+.orbiting-star:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.star-tooltip {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: var(--border-thick);
+  box-shadow: 4px 4px 0px #000;
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.star-tooltip strong { color: var(--accent-purple); font-weight: 900; }
+.orbiting-star:hover .star-tooltip { opacity: 1; top: -75px; }
+
+@media (max-width: 850px) { .constellation-canvas { transform: scale(0.8); margin-top: 0; } }
+@media (max-width: 600px) { .constellation-canvas { transform: scale(0.5); margin-top: -100px; } }

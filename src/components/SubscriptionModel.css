@@ -1,0 +1,454 @@
+.sub-page-wrapper {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.sub-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.model-tag {
+  display: inline-block;
+  background: var(--accent-purple);
+  color: #fff;
+  padding: 5px 15px;
+  font-weight: 900;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 2px solid #000;
+}
+
+.sub-header h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.sub-header p {
+  font-weight: 700;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* REVENUE LOGIC BANNER */
+.revenue-logic-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #000;
+  color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  margin-bottom: 60px;
+  box-shadow: 12px 12px 0px #A855F7;
+}
+
+.logic-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.logic-card.border-left {
+  border-left: 2px dashed #444;
+}
+
+.logic-icon-circle {
+  background: #222;
+  padding: 15px;
+  border-radius: 50%;
+  border: 2px solid #444;
+}
+
+.logic-card h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.logic-card p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* PRICING GRID */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.price-card {
+  background: #fff;
+  border: 4px solid #000;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 10px 10px 0px #000;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s ease;
+}
+
+.price-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 14px 14px 0px #000;
+}
+
+.price-card.featured {
+  background: #fafafa;
+  border-color: #000;
+  position: relative;
+  transform: scale(1.03);
+}
+
+.popular-tag {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  padding: 6px 20px;
+  font-weight: 900;
+  font-size: 0.75rem;
+  border-radius: 50px;
+}
+
+.plan-name {
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.plan-price {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  line-height: 1;
+}
+
+.plan-price span {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.fee-badge {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 5px 12px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  width: fit-content;
+}
+
+.fee-badge.yellow {
+  background: var(--accent-yellow);
+  color: #000;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  flex-grow: 1;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.plan-btn {
+  width: 100%;
+  padding: 18px;
+  border: 3px solid #000;
+  background: #fff;
+  font-weight: 900;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px #000;
+  transition: 0.1s;
+}
+
+.plan-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+.featured-btn {
+  background: var(--accent-yellow);
+}
+
+.revenue-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 60px;
+  color: #888;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .revenue-logic-banner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .logic-card.border-left {
+    border-left: none;
+    border-top: 2px dashed #444;
+    padding-top: 30px;
+  }
+  .sub-header h1 { font-size: 2.5rem; }
+}
+/* --- CALCULATOR STYLING --- */
+.calculator-container {
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 60px;
+  box-shadow: 10px 10px 0px #000;
+}
+
+.calc-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.calc-header h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.calc-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.slider-box label {
+  display: block;
+  font-weight: 900;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.slider-box label span {
+  color: var(--accent-purple);
+  font-size: 1.8rem;
+}
+
+.impact-slider {
+  width: 100%;
+  appearance: none;
+  height: 15px;
+  background: #eee;
+  border: 3px solid #000;
+  border-radius: 10px;
+  outline: none;
+}
+
+.impact-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background: var(--accent-yellow);
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.calc-hint {
+  margin-top: 15px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #666;
+}
+
+.result-box {
+  background: #f0fdf4; /* Success green tint */
+  border: 3px dashed #000;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.result-box label {
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--accent-green);
+  letter-spacing: 1px;
+}
+
+.savings-amount {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #000;
+  margin: 10px 0;
+}
+
+.result-box p {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+@media (max-width: 800px) {
+  .calc-content { grid-template-columns: 1fr; }
+}
+/* --- COMPARISON SECTION --- */
+.comparison-section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+  border: 4px solid #000;
+  border-radius: 20px;
+  box-shadow: 10px 10px 0px #000;
+  background: #fff;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th, 
+.comparison-table td {
+  padding: 20px 25px;
+  border-bottom: 2px solid #000;
+  font-weight: 700;
+}
+
+.comparison-table thead th {
+  background: #000;
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.ads-col { background: #f8f8f8; color: #666; width: 30%; }
+.invitel-col { background: #fff; color: #000; width: 30%; }
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table td svg {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Row highlighting */
+.comparison-table tr:hover td {
+  background-color: #f0fdf4;
+}
+
+.comparison-table td:nth-child(3) {
+  color: var(--accent-purple);
+  font-weight: 900;
+}
+
+/* Adjustments for the result box color */
+.result-box {
+  background: #f0fff4 !important; /* Force green success background */
+}
+/* --- BAR GRAPH STYLING --- */
+.bar-graph-container {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 2px dashed #ddd;
+}
+
+.graph-label {
+  font-weight: 900;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.bar-wrapper {
+  margin-bottom: 20px;
+}
+
+.bar-meta-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.bar-meta-info span { color: #555; }
+
+.bar-bg {
+  width: 100%;
+  height: 24px;
+  background: #eee;
+  border: 3px solid #000;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.trad-bar {
+  background: #ff4d4d; /* Aggressive Red for loss */
+  border-right: 3px solid #000;
+}
+
+.invitel-bar {
+  background: var(--accent-green); /* Success Green */
+  border-right: 3px solid #000;
+}
+
+/* Make sure the green result box stays vibrant */
+.result-box {
+  background: #f0fdf4 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.savings-amount {
+  color: var(--accent-green) !important;
+}
