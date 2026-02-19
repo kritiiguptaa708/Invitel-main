@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Shield, Mail, Calendar, MapPin, Award, Zap, 
-  LogOut, Settings, Star, FileText, TrendingUp, Share2, X, Download, Trophy 
+  LogOut, Settings, Star, FileText, TrendingUp, Share2, X, Download, Trophy, Copy, Check, Users 
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Profile.css';
@@ -30,7 +30,7 @@ const MilestoneCard = ({ isOpen, onClose, user, rank }) => {
               
               <div className="share-body">
                 <div className="share-avatar-ring">
-                   <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${user.name}`} alt="Avatar" />
+                    <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${user.name}`} alt="Avatar" />
                 </div>
                 <h2 className="share-name">{user.name.toUpperCase()}</h2>
                 <div className="share-rank-badge">
@@ -69,6 +69,7 @@ const MilestoneCard = ({ isOpen, onClose, user, rank }) => {
 // --- MAIN PROFILE COMPONENT ---
 const Profile = () => {
   const [showShareCard, setShowShareCard] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [user, setUser] = useState({
     name: "MARCUS V.",
     email: "marcus.v@hero.io",
@@ -78,6 +79,13 @@ const Profile = () => {
     location: "Mumbai, IN",
     referralCode: "MARC-26"
   });
+
+  const handleCopyLink = () => {
+    const link = `${window.location.origin}/register?ref=${user.referralCode}`;
+    navigator.clipboard.writeText(link);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   useEffect(() => {
     const savedProfile = localStorage.getItem('userProfile');
@@ -129,7 +137,6 @@ const Profile = () => {
           </div>
 
           <div className="profile-actions">
-            {/* REDESIGNED PREMIUM BUTTON */}
             <button className="share-trigger-btn" onClick={() => setShowShareCard(true)}>
               <Share2 size={20} />
               <span>GENERATE SHARE CARD</span>
@@ -142,8 +149,25 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: RECORDS & SETTINGS */}
+        {/* RIGHT COLUMN: DATA & RECRUITMENT */}
         <div className="profile-data-column">
+          
+          {/* UPDATED REFERRAL CARD */}
+          <div className="data-card referral-link-card">
+            <h3 className="card-title"><Users size={24} strokeWidth={3} /> RECRUIT ALLIES</h3>
+            <p className="card-subtitle">Your unique invitation key to grow the network and multiply impact.</p>
+            <div className="referral-input-group">
+              <input 
+                type="text" 
+                readOnly 
+                value={`${window.location.origin}/register?ref=${user.referralCode}`} 
+              />
+              <button onClick={handleCopyLink} className={copied ? "copied" : ""}>
+                {copied ? <Check size={20} /> : <Copy size={20} />}
+                <b>{copied ? "SYNCED" : "COPY"}</b>
+              </button>
+            </div>
+          </div>
           
           <div className="data-card impact-card-bg">
             <h3 className="card-title"><Award size={20}/> CAREER RECORDS</h3>
